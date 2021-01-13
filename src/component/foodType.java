@@ -18,18 +18,18 @@ public class foodType extends itemType {
 			this.type = type;
 		}
 	}
-
+	
+	@Override
 	public String getType() {
 		return type;
 	}
-
-	/* public boolean isType(String compare) {
-    for(String find: list) {
-      if(compare.equals(find) == true) {
-        return true;
-      }
-    }
-    return false;
-  }*/
+	/*public boolean isType(String compare) {
+	    for(String find: list) {
+	      if(compare.equals(find) == true) {
+	        return true;
+	      }
+	    }
+	    return false;
+	}*/
 
 }

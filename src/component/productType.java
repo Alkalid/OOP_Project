@@ -17,7 +17,7 @@ public class productType extends itemType {
     	this.type = type;
     }
   }
-
+  	@Override
 	public String getType() {
 		return type;
 	}

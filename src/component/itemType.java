@@ -2,9 +2,11 @@ package component;
 
 import java.util.List;
 
-public class itemType {
+public abstract class itemType {
 	private List<String> list;
-
+	
+	public abstract String getType();
+	
 	public itemType() {
 		list.add("Drinks");
 		list.add("Brunch");
