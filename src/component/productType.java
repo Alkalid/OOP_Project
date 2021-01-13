@@ -7,20 +7,23 @@ public class productType extends itemType {
   private List<String> type = new ArrayList<>();
   
   public productType() {
-    type.add("Cloth");
-    type.add("Shoes");
-    type.add("3C");
-    type.add("Book");
-    type.add("Misc");
-    //type.add("");
+    super();
+    type = super.getList();
   }
-  
+
+  public List<String> getList() {
+    return type;
+  }
+
   public boolean isType(String compare) {
-    for(String find: type) {
-      if(compare.equals(find) == true) {
-        return true;
-      }
-    }
-    return false;
+    return super.isType(compare);
+  }
+
+  public void createNewType(String newtype) {
+    super.createNewType(newtype);
+  }
+
+  public void deleteType(String deletingtype) {
+    super.deleteType(deletingtype);
   }
 }
