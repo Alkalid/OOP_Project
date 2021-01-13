@@ -32,8 +32,8 @@ public class item {
 		return name;
 	}
 
-	public itemType getType() {
-		return this.type;
+	public String getType() {
+		return this.type.getType();
 	}
 
 	public void setType(itemType type) {
