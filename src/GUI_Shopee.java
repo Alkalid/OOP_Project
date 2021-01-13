@@ -22,11 +22,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
 
-public class GUI {
+public class GUI_Shopee {
   List<item> itemList = new ArrayList<>();
   List<String> typeList = new ArrayList<>();
   
-    public GUI() {
+    public GUI_Shopee() {
       CreateItem createItem = new CreateItem();
       itemType itemtype = new itemType();
       itemList = createItem.getItemList();
@@ -34,7 +34,7 @@ public class GUI {
       new MyFrame(typeList,itemList);
     }
     
-    public GUI(List<String> type,List<item> items) {
+    public GUI_Shopee(List<String> type,List<item> items) {
       typeList = type;
       itemList = items;
       new MyFrame(typeList,itemList);
@@ -44,20 +44,20 @@ public class GUI {
      CreateItem createItem = new CreateItem();
      itemType itemtype = new itemType();
         List<item> itemList = new ArrayList<>();
-        FoodPanda FP = new FoodPanda(ShopTypee.FoodPanda);
-        itemList = FP.ItemList;
+        Shopee SP = new Shopee(ShopTypee.Shopee);
+        itemList = SP.ItemList;
         //itemList = createItem.getItemList();
         List<String> typeList = new ArrayList<>();
         typeList = itemtype.getList();
-        new MyFrame(typeList,itemList);
+        new MyFrame_Shopee(typeList,itemList);
     }
 }
 
-class MyFrame extends JFrame implements ActionListener {
+class MyFrame_Shopee extends JFrame implements ActionListener {
     private List<item> itemList;
     private List<String> typeList;
     private List<item> buyed = new ArrayList();
-    FoodPanda FP = new FoodPanda(ShopTypee.FoodPanda);	//
+    Shopee SP = new Shopee(ShopTypee.Shopee);	//
     
     private static final long serialVersionUID = 1L;
     MenuBar menuBar;    // ��甈�
@@ -65,8 +65,8 @@ class MyFrame extends JFrame implements ActionListener {
     MenuItem main, search, buycart; // �����
     Panel contentPanel; // �摰寥�嚗銝�瘛餃�隞�����
 
-    public MyFrame(List<String> types, List<item>items) {
-    	FP.GUIList = buyed;
+    public MyFrame_Shopee(List<String> types, List<item>items) {
+    	SP.GUIList = buyed;
     	
         this.itemList = items;
         this.typeList = types;
@@ -96,7 +96,7 @@ class MyFrame extends JFrame implements ActionListener {
         add(contentPanel, BorderLayout.CENTER);
         
         // 蝒��隞�
-        setTitle("FoodPanda");
+        setTitle("Shopee");
         setBounds(300, 50, 400, 300);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -107,11 +107,11 @@ class MyFrame extends JFrame implements ActionListener {
         Object source = e.getSource();
         
         if (source == main) {
-           showSpecifiedPanel(contentPanel, new main("main",typeList,itemList,buyed,FP));
+           showSpecifiedPanel(contentPanel, new main_Shopee("main",typeList,itemList,buyed,SP));
         } else if (source == search) {
-           showSpecifiedPanel(contentPanel, new search("search",typeList,itemList,buyed,FP));
+           showSpecifiedPanel(contentPanel, new search_Shopee("search",typeList,itemList,buyed,SP));
         } else if (source == buycart) {
-          showSpecifiedPanel(contentPanel, new buycart("buycart",buyed,FP));
+          showSpecifiedPanel(contentPanel, new buycart_Shopee("buycart",buyed,SP));
       }
     }
 
@@ -126,10 +126,10 @@ class MyFrame extends JFrame implements ActionListener {
 }
 
 // 蝪⊥����������(雿輻����摰儔)
-class main extends Panel {
-    public main(String msg,List<String> types, List<item> items, List<item> buyed,FoodPanda FP) {
+class main_Shopee extends Panel {
+    public main_Shopee(String msg,List<String> types, List<item> items, List<item> buyed,Shopee FP) {
       this.removeAll();
-      main ma = this;
+      main_Shopee ma = this;
       JComboBox menu = new JComboBox();
       menu.addItem("Please chose");
       for(String find : types) {
@@ -151,7 +151,7 @@ class main extends Panel {
       this.add(menu);
     }
     
-    public void addButton(item find,List<item> buyed,FoodPanda FP) {
+    public void addButton(item find,List<item> buyed,Shopee FP) {
       JButton button2 = new JButton(find.getName() + " " + find.getPrice());
       button2.addActionListener(new ActionListener() {
         @Override
@@ -165,10 +165,10 @@ class main extends Panel {
     }
 }
 
-class search extends Panel {
-  public search(String msg,List<String> types, List<item>items,List<item> buyed,FoodPanda FP) {
+class search_Shopee extends Panel {
+  public search_Shopee(String msg,List<String> types, List<item>items,List<item> buyed,Shopee FP) {
       JTextField enterField = new JTextField(20);
-      search se = this;
+      search_Shopee se = this;
       Panel panel = this;
       JButton button = new JButton("Search");
       button.addActionListener(new ActionListener() {
@@ -186,7 +186,7 @@ class search extends Panel {
       panel.add(enterField);
       panel.add(button);
   }
-  public void addButton(item find,List<item> buyed,FoodPanda FP) {
+  public void addButton(item find,List<item> buyed,Shopee FP) {
     JButton button2 = new JButton(find.getName() + " " + find.getPrice());
     button2.addActionListener(new ActionListener() {
       @Override
@@ -201,12 +201,12 @@ class search extends Panel {
 }
 
 
-class buycart extends Panel {
+class buycart_Shopee extends Panel {
   List<item> buyed;
   
-  public buycart(String msg,List<item> buylist,FoodPanda FP) {
+  public buycart_Shopee(String msg,List<item> buylist,Shopee FP) {
       buyed = buylist;
-      buycart buy = this;
+      buycart_Shopee buy = this;
       JButton dealbutton = new JButton("deal");
       dealbutton.addActionListener(new ActionListener() {
     	  @Override
@@ -231,7 +231,7 @@ class buycart extends Panel {
       }
   }
   
-  public void Reset(List<item> buy,FoodPanda FP) {
+  public void Reset(List<item> buy,Shopee FP) {
 	  FP.Checkout((ArrayList)buy);
 	  this.removeAll();
 	  this.setVisible(false);
@@ -249,8 +249,8 @@ class buycart extends Panel {
   
 }
 
-class deal extends Panel {
-  public deal(String msg,List<item> buyed) {
+class deal_Shopee extends Panel {
+  public deal_Shopee(String msg,List<item> buyed) {
       
   }
 }

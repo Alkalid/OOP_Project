@@ -3,16 +3,14 @@ import java.util.List;
 
 import component.item;
 
-public class FoodPanda extends AbstractShop {
-	
+public class Shopee extends AbstractShop{
 	public List<item> GUIList = new ArrayList();
 	
-	public FoodPanda(ShopTypee SType) {
+	public Shopee(ShopTypee SType) {
 		super(SType);
 		type(SType);
 		transport(SType);
 	}
-	
 	
 	public void type(ShopTypee SType) {
 		ArrayList allItem = DS.getItemList(); //查看DataServer 取得商品清單 來自Server
@@ -74,13 +72,14 @@ public class FoodPanda extends AbstractShop {
 
 
 	public void transport(ShopTypee SType) {
-		if(SType ==  ShopTypee.FoodPanda) {
-			TPState = new String[4];
-			TPState[0] = "外送員正在前往取餐";
-			TPState[1] = "外送員正在前往您的地址";
-			TPState[2] = "外送員即將抵達";
-			TPState[3] = "完成送餐";
-		}
+		
+		TPState = new String[6];
+		TPState[0] = "檢貨中";
+		TPState[1] = "包裹在物流中心，準備出貨";
+		TPState[2] = "包裹開始配送";
+		TPState[3] = "包裹到達地方物流中心";
+		TPState[4] = "包裹投遞中";
+		TPState[5] = "完成配送";
+		
 	}
-
 }
