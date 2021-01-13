@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class foodType extends itemType {
-  List<String> type = new ArrayList<>();
-  
+  private List<String> type = new ArrayList<>();
+ 
   public foodType() {
     type.add("Drinks");
     type.add("Brunch");
@@ -13,6 +13,15 @@ public class foodType extends itemType {
     type.add("Ameracan food");
     type.add("Japanese food");
     type.add("Fast food");
-    type.add("");
+    //type.add("");
+  }
+  
+  public boolean isType(String compare) {
+    for(String find: type) {
+      if(compare.equals(find) == true) {
+        return true;
+      }
+    }
+    return false;
   }
 }
