@@ -1,11 +1,14 @@
 package component;
-
+import java.util.ArrayList;
 import java.util.List;
 
-public abstract class itemType {
-	private List<String> list;
-	
-	public abstract String getType();
+public class itemType {
+	//private List<String> list;
+	private List<String> list = new ArrayList<>();
+	public String getType()
+	{
+		return "123";
+	}
 	
 	public itemType() {
 		list.add("Drinks");
