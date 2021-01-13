@@ -6,12 +6,14 @@ import java.util.List;
 public class server extends CreateItem{
 	String name = "";				//此server name
 	
-	ArrayList item_list = (ArrayList) super.items; //server 裡面的商品清單
+	ArrayList item_list ; //server 裡面的商品清單
 	
 	private DelegatedOBS observable;
 	
 	
 	public server() {
+		super();
+		item_list = (ArrayList) super.getItemList();
 		observable = new DelegatedOBS();
 		
 	}

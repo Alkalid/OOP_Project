@@ -19,7 +19,7 @@ public class productType extends itemType {
   }
   	@Override
 	public String getType() {
-		return type;
+		return this.type;
 	}
 
 

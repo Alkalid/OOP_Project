@@ -21,7 +21,7 @@ public class foodType extends itemType {
 	
 	@Override
 	public String getType() {
-		return type;
+		return this.type;
 	}
 	/*public boolean isType(String compare) {
 	    for(String find: list) {

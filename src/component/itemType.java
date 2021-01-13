@@ -5,8 +5,7 @@ import java.util.List;
 public class itemType {
 	//private List<String> list;
 	private List<String> list = new ArrayList<>();
-	public String getType()
-	{
+	public String getType() {
 		return "123";
 	}
 	

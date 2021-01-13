@@ -5,7 +5,7 @@ import component.*;
 
 public abstract class AbstractShop {
 	//ShopTypee SType = ShopTypee.FoodPanda;	//
-	server DS;  //瀏覽server裡的資料
+	server DS = new server();  //瀏覽server裡的資料
 	ArrayList ItemList = new ArrayList(); //表示商品清單
 	String[] TPState;						//送貨進度
 	
@@ -20,11 +20,11 @@ public abstract class AbstractShop {
 		this.ItemList.add(item);
 	}*/
 	
-	public void select(item item) {
+	final public void select(item item) {
 		System.out.println("選擇: " + item.getName());
 	}
 	
-	public void Checkout(ArrayList items) {
+	final public void Checkout(ArrayList items) {
 		int total = 0;
 		System.out.println("購買品項: ");
 		for(int i = 0; i < items.size(); i++) {
