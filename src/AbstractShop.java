@@ -15,14 +15,6 @@ public abstract class AbstractShop extends AllFunction{
 		
 	}
 	
-	public void select() {
-		
-	}
-	
-	public void Checkout() {
-		
-	}
-	
 	public void NewItem(item item) { //新增物品到商店 到時候再實作
 		this.ItemList.add(item);
 	}
@@ -38,8 +30,9 @@ public abstract class AbstractShop extends AllFunction{
 	}
 	
 	public void type(ShopTypee SType) {
+		LinkedList allItem = DS.getItemList(); //查看 取得商品清單 來自Server
+		
 		if(SType ==  ShopTypee.FoodPanda) {
-			LinkedList allItem = DS.getItemList(); //查看 取得商品清單 來自Server
 			for(int i = 0; i < allItem.size(); i++ ) {	//分類
 				String allItem_type = ((item)(allItem.get(i))).getType();
 				
@@ -63,6 +56,34 @@ public abstract class AbstractShop extends AllFunction{
 				}
 			}
 			
+		}
+		
+		if(SType ==  ShopTypee.Shopee) {
+			for(int i = 0; i < allItem.size(); i++ ) {	//分類
+				String allItem_type = ((item)(allItem.get(i))).getType();
+				
+				if (allItem_type == "Drinks") { 
+					this.ItemList.add(allItem.get(i));
+				}
+				else if (allItem_type == "Taiwanese food") { 
+					this.ItemList.add(allItem.get(i));
+				}
+				else if (allItem_type == "Book") { 
+					this.ItemList.add(allItem.get(i));
+				}
+				else if (allItem_type == "3C") { 
+					this.ItemList.add(allItem.get(i));
+				}
+				else if (allItem_type == "Cloth") { 
+					this.ItemList.add(allItem.get(i));
+				}
+				else if (allItem_type == "Shoes") { 
+					this.ItemList.add(allItem.get(i));
+				}
+				else if (allItem_type == "Misc") { 
+					this.ItemList.add(allItem.get(i));
+				}
+			}
 		}
 	}
 	
