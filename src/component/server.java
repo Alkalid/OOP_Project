@@ -16,7 +16,7 @@ public abstract class server {
 		item[] items= CI.getItemList();	//取得CreatItem 製造的物品 放進LinkedList陣列中
 		for(int i = 0; i < items.length; i++)
 		{
-			item_list.add(items[i]);
+			item_list.add(items[i]);//
 		}
 	}
 	
