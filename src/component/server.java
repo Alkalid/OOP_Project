@@ -1,27 +1,29 @@
 package component;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.util.List;
 
-public class server {
+public class server extends CreateItem{
 	String name = "";				//此server name
 	
-	CreateItem CI = new CreateItem(); //包含 目前CreatItem還沒做好
+	ArrayList item_list = (ArrayList) super.items; //server 裡面的商品清單
 	
-	//購買資料 姓名 有哪些東西 外送方式 付款方式
+	private DelegatedOBS observable;
 	
-	LinkedList item_list = new LinkedList();	//server中有多少商品
-	//item 陣列 表示此服務有多少項目
 	
 	public server() {
-		item[] items= CI.getItemList();	//取得CreatItem 製造的物品 放進LinkedList陣列中
-		for(int i = 0; i < items.length; i++)
-		{
-			item_list.add(items[i]);	//
-		}
+		observable = new DelegatedOBS();
+		
 	}
 	
-	public LinkedList getItemList() {
-		return this.item_list;
+	public ArrayList getItemList() {
+		return item_list;
+	}
+	
+	public void  newItem(item item) {
+		item_list.add(item);
+		observable.setChanged();
+		observable.notifyObservers(item_list);	//不確定要不要給一個新的清單 怕user修改
 	}
 	
 	
