@@ -12,5 +12,6 @@ public class productType extends itemType {
     type.add("3C");
     type.add("Book");
     type.add("Misc");
+    type.add("");
   }
 }

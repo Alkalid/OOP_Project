@@ -13,5 +13,6 @@ public class foodType extends itemType {
     type.add("Ameracan food");
     type.add("Japanese food");
     type.add("Fast food");
+    type.add("");
   }
 }
