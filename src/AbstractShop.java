@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.Observable;
 
 import component.*;
 
@@ -19,6 +20,10 @@ public abstract class AbstractShop {
 	/*public void NewItem(item item) { //新增物品到商店 到時候再實作
 		this.ItemList.add(item);
 	}*/
+	public void update(Observable obj, Object newValue) {	//
+		this.ItemList = (ArrayList) newValue;
+		System.out.print("change");
+	}
 	
 	final public void select(item item) {
 		System.out.println("選擇: " + item.getName());
