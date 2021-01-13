@@ -1,11 +1,12 @@
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 import component.*;
 
-public abstract class AbstractShop extends AllFunction{
+public abstract class AbstractShop {
 	//ShopTypee SType = ShopTypee.FoodPanda;	//
 	server DS;  //瀏覽server裡的資料
-	LinkedList ItemList = new LinkedList(); //表示商品清單
+	ArrayList ItemList = new ArrayList(); //表示商品清單
 	String[] TPState;						//送貨進度
 	
 	
@@ -15,8 +16,24 @@ public abstract class AbstractShop extends AllFunction{
 		
 	}
 	
-	public void NewItem(item item) { //新增物品到商店 到時候再實作
+	/*public void NewItem(item item) { //新增物品到商店 到時候再實作
 		this.ItemList.add(item);
+	}*/
+	
+	public void select(item item) {
+		System.out.println("選擇: " + item.getName());
+	}
+	
+	public void Checkout(ArrayList items) {
+		int total = 0;
+		System.out.println("購買品項: ");
+		for(int i = 0; i < items.size(); i++) {
+			item it = ((item)(items.get(i)));
+			System.out.println("選擇: " + it.getName());
+			total += it.getPrice();
+		}
+		System.out.println("----------------------------------");
+		System.out.println("總金額"+ total);
 	}
 	
 	public void transport(ShopTypee SType) {
@@ -30,7 +47,7 @@ public abstract class AbstractShop extends AllFunction{
 	}
 	
 	public void type(ShopTypee SType) {
-		LinkedList allItem = DS.getItemList(); //查看 取得商品清單 來自Server
+		ArrayList allItem = DS.getItemList(); //查看DataServer 取得商品清單 來自Server
 		
 		if(SType ==  ShopTypee.FoodPanda) {
 			for(int i = 0; i < allItem.size(); i++ ) {	//分類
