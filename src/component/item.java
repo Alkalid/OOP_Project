@@ -5,7 +5,7 @@ public abstract class item {
 	String item_id;
 	String name;
 	itemType type;
-	shop shop;
+	Shop shop;
 	Seller seller;
 	
 	public item() {}
@@ -16,9 +16,9 @@ public abstract class item {
 
 	public abstract void setType(itemType type);
 	
-	public abstract shop getShop();
+	public abstract Shop getShop();
 
-	public abstract void setShop(shop shop);
+	public abstract void setShop(Shop shop);
 
 	public abstract Seller getSeller();
 

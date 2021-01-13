@@ -4,23 +4,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class productType extends itemType {
-  private List<String> type = new ArrayList<>();
+  private List<String> list = new ArrayList<String>();
+  private String type = null;
   
-  public productType() {
-    type.add("Cloth");
-    type.add("Shoes");
-    type.add("3C");
-    type.add("Book");
-    type.add("Misc");
-    //type.add("");
+  public productType(String type) {
+	list.add("Cloth");
+	list.add("Shoes");
+	list.add("3C");
+	list.add("Book");
+	list.add("Music");
+	if(isType(type)) {
+    	this.type = type;
+    }
   }
+
+	public String getType() {
+		return type;
+	}
+
+
   
-  public boolean isType(String compare) {
-    for(String find: type) {
+/* public boolean isType(String compare) {
+    for(String find: list) {
       if(compare.equals(find) == true) {
         return true;
       }
     }
     return false;
-  }
+  }*/
 }
