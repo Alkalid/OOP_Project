@@ -2,7 +2,7 @@ package component;
 
 import java.util.LinkedList;
 
-public abstract class server {
+public class server {
 	String name = "";				//此server name
 	
 	CreateItem CI = new CreateItem(); //包含 目前CreatItem還沒做好
@@ -16,7 +16,7 @@ public abstract class server {
 		item[] items= CI.getItemList();	//取得CreatItem 製造的物品 放進LinkedList陣列中
 		for(int i = 0; i < items.length; i++)
 		{
-			item_list.add(items[i]);//
+			item_list.add(items[i]);	//
 		}
 	}
 	
@@ -24,19 +24,8 @@ public abstract class server {
 		return this.item_list;
 	}
 	
-	public void NewItem(item item) {
-		this.item_list.add(item);
-	}
 	
-	public void select() {
-		
-	}
 	
-	public void Checkout() {
-		
-	}
 	
-	public abstract void transport();
-	public abstract void type();
 	
 }

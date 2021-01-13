@@ -1,7 +1,21 @@
 package component;
 
-public interface AllFunction {
+public abstract class AllFunction {
 	
-	item SelectItem();
+	
+	public abstract void NewItem(item item); //新增物品到商店 到時候再實作
 
+	
+	public void select() {
+		
+	}
+	
+	public void Checkout() {
+		
+	}
+	
+	
+	
+	public abstract void transport();
+	public abstract void type();
 }
