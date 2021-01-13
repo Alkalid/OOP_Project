@@ -1,6 +1,6 @@
 package component;
 
-public abstract class item {
+public class item {
 	int price;
 	String item_id;
 	String name;

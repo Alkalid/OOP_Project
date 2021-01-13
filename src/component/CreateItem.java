@@ -2,7 +2,7 @@ package component;
 
 public class CreateItem {
 	item[] item = new item[30];
-
+	
 	public CreateItem() {
 		super();
 		item[0] = new item(25,"food_drink_a1","Coke",new foodType("Drinks"),new Shop("A"),null);
@@ -52,7 +52,9 @@ public class CreateItem {
 	}
 	
 	
-	
+	public item[] getItemList() {
+		return this.item;
+	}
 	
 	
 }
