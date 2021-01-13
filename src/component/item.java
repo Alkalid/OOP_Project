@@ -8,20 +8,46 @@ public abstract class item {
 	Shop shop;
 	Seller seller;
 	
-	public item() {}
+	public item(int price, String item_id, String name, itemType type, Shop shop, Seller seller) {
+		this.price = price;
+		this.item_id = item_id;
+		this.name = name;
+		this.type = type;
+		this.shop = shop;
+		this.seller = seller;
+	}
 	
-	public abstract void set();
+	public int getPrice() {
+		return price;
+	}
 
-	public abstract itemType getType();
 
-	public abstract void setType(itemType type);
+	public String getItem_id() {
+		return item_id;
+	}
+
+
+
+	public String getName() {
+		return name;
+	}
+
+	public itemType getType() {
+		return this.type;
+	}
+
+	public void setType(itemType type) {
+		this.type = type;
+	}
 	
-	public abstract Shop getShop();
+	public Shop getShop() {
+		return this.shop;
+	}
 
-	public abstract void setShop(Shop shop);
 
-	public abstract Seller getSeller();
+	public Seller getSeller() {
+		return this.seller;
+	}
 
-	public abstract void setSeller(Seller seller);
 	
 }
