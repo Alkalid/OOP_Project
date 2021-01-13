@@ -1,5 +1,8 @@
 package component;
 
-public class productType extends itemType {
+import java.util.ArrayList;
+import java.util.List;
 
+public class productType extends itemType {
+  List<String> type = new ArrayList<>();
 }
